@@ -45,47 +45,47 @@ Le système se fait en passant par la bibliothèque Datatable, qui automatise ce
 # Ajout d’un salarié
 J’ai ajouté un bouton “Ajouter un salarié”.
 Quand on clique dessus, on est redirigé vers ajouterSalarie.php, qui contient un formulaire vide avec :
-    • nom
-    • prénom
-    • date de naissance
-    • date d’embauche
-    • salaire
-    • service (liste déroulante)
+- nom
+- prénom
+- date de naissance
+- date d’embauche
+- salaire
+- service (liste déroulante)
 Quand on valide, les données sont envoyées en POST vers
 /process/ajoutSalarie.php.
 Dans ce fichier :
-    • je récupère les données
-    • j’exécute une requête SQL INSERT
-    • puis je redirige vers listeSalaries.php
+- je récupère les données
+- j’exécute une requête SQL INSERT
+- puis je redirige vers listeSalaries.php
 Suppression d’un salarié
 Chaque salarié a un bouton Supprimer.
 Quand on clique dessus :
-    1. Une fonction JavaScript confirmerSuppression(id) s’exécute
-    2. Une confirmation s’affiche
-    3. Si on accepte, on est redirigé vers supprimerSalarie.php?id=...
+> 1. Une fonction JavaScript confirmerSuppression(id) s’exécute
+> 2. Une confirmation s’affiche
+> 3. Si on accepte, on est redirigé vers supprimerSalarie.php?id=...
 Dans ce fichier :
-    • Je vérifie que l’id est bien présent dans l’URL
-    • Je vérifie qu’il existe en base
-    • J’exécute une requête DELETE
+- Je vérifie que l’id est bien présent dans l’URL
+- Je vérifie qu’il existe en base
+- J’exécute une requête DELETE
 J’ai utilisé bindParam() pour sécuriser la requête et éviter les injections SQL.
 Ensuite, redirection vers listeSalaries.php.
 
 # Modification d’un salarié
 Il y a aussi un bouton Modifier.
 Quand on clique dessus :
-    • Redirection vers modifierSalarie.php?id=...
-    • Vérification de l’id dans l’URL
-    • Vérification que le salarié existe
+- Redirection vers modifierSalarie.php?id=...
+- Vérification de l’id dans l’URL
+- Vérification que le salarié existe
 Si tout est bon, un formulaire s’affiche avec les champs déjà remplis grâce à l’attribut value.
 Il y a aussi un champ caché contenant l’id.
 Quand on valide :
-    • Les données sont envoyées en POST vers /process/modifSalarie.php
-    • Une requête UPDATE est exécutée
-    • Puis redirection vers listeSalaries.php
+- Les données sont envoyées en POST vers /process/modifSalarie.php
+- Une requête UPDATE est exécutée
+- Puis redirection vers listeSalaries.php
 # Sécurité
 Dans le projet, j’ai essayé d’appliquer quelques bonnes pratiques :
-    • Utilisation de PDO
-    • Requêtes préparées avec bindParam
-    • Vérification des paramètres GET et POST
-    • Confirmation avant suppression
-    • Séparation entre affichage et traitement
+- Utilisation de PDO
+- Requêtes préparées avec bindParam
+- Vérification des paramètres GET et POST
+- Confirmation avant suppression
+- Séparation entre affichage et traitement
