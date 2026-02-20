@@ -1,6 +1,7 @@
 # Contexte
 Dans ce projet, j’ai repris le travail d’un ancien stagiaire afin d’organiser le code et de créer une interface d’administration permettant de gérer les salariés (ajout, suppression, modification).
-Organisation du code
+
+# Organisation du code
 Au début, le fichier listeSalaries.php mélangeait un peu tout (HTML + requêtes SQL). J’ai donc essayé de mieux organiser le projet pour que ce soit plus clair et plus simple à maintenir.
 Dossier partials
 J’ai créé un dossier partials dans lequel j’ai mis :
