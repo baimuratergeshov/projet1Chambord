@@ -4,8 +4,8 @@ Organisation du code
 Au début, le fichier listeSalaries.php mélangeait un peu tout (HTML + requêtes SQL). J’ai donc essayé de mieux organiser le projet pour que ce soit plus clair et plus simple à maintenir.
 Dossier partials
 J’ai créé un dossier partials dans lequel j’ai mis :
-    • header.php
-    • footer.php
+    - header.php
+    - footer.php
 Ça évite de recopier le header et le footer dans chaque page.
 On les inclut simplement avec :
 include_once("./partials/header.php");
@@ -16,8 +16,8 @@ Si on veut modifier la barre de navigation ou le footer, on le fait une seule fo
 # Fichier de connexion à la base de données
 J’ai créé un fichier db.php pour gérer la connexion à la base de données.
 Je me suis basé sur le fichier connexion.php donné dans le TP, puis j’ai modifié :
-    • le nom de la base de données
-    • les identifiants de connexion
+    - le nom de la base de données
+    - les identifiants de connexion
 J’utilise PDO avec gestion des erreurs.
 Comme ça, si les paramètres changent, on n’a qu’un seul fichier à modifier.
 Dossier utils et fonctions
@@ -30,14 +30,14 @@ Puis dans listeSalaries.php, j’inclus :
 include_once("./utils/function.php");
 
 Ça permet de séparer :
-    • la partie affichage (HTML)
-    • la partie traitement (requêtes SQL)
+    - la partie affichage (HTML)
+    - la partie traitement (requêtes SQL)
 Affichage des salariés
 Les salariés sont affichés dans un tableau HTML.
 J’ai aussi ajouté :
-    • une pagination (pour limiter le nombre de résultats par page)
-    • une barre de recherche
-    • un tri des colonnes quand on clique sur l’en-tête du tableau
+    - une pagination (pour limiter le nombre de résultats par page)
+    - une barre de recherche
+    - un tri des colonnes quand on clique sur l’en-tête du tableau
 Le système se fait en passant par la bibliothèque Datatable, qui automatise ce système, il faut juste l’appelé avec la balise script.
 
 
